@@ -28,6 +28,10 @@ services:
     environment:
       - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
       - DEER_FLOW_INTERNAL_GATEWAY_BASE_URL=http://gateway:8001
+      # Coolify may inject PORT for the public-facing service. Keep the
+      # internal Next.js listener aligned with nginx's frontend:3000 upstream.
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
       - DEER_FLOW_TRUSTED_ORIGINS=${DEER_FLOW_TRUSTED_ORIGINS:-}
     networks:
       - deer-flow

@@ -83,3 +83,11 @@ def test_frontend_rewrites_langgraph_prefix_to_gateway():
     assert "DEER_FLOW_INTERNAL_LANGGRAPH_BASE_URL" not in next_config
     assert "http://127.0.0.1:2024" not in next_config
     assert "langgraph-compat" not in api_client
+
+def test_coolify_frontend_port_matches_nginx_upstream():
+    compose = _read("docker/docker-compose.coolify.yaml")
+    nginx_config = _read("docker/nginx/nginx.conf")
+
+    assert "set $frontend_upstream frontend:3000;" in nginx_config
+    assert "- PORT=3000" in compose
+    assert "- HOSTNAME=0.0.0.0" in compose
