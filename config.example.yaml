@@ -444,6 +444,18 @@ tools:
   #   use: deerflow.community.firecrawl.tools:web_fetch_tool
   #   # api_key: $FIRECRAWL_API_KEY
 
+  # Steel Browser capture tool (optional; deploy Steel on Railway or self-host it)
+  # Use this when the agent needs real browser screenshots, PDFs, or a Steel session viewer URL.
+  # Deploy: https://railway.app/deploy/steelbrowser
+  # - name: steel_capture
+  #   group: web
+  #   use: deerflow.community.steel_browser.tools:steel_capture_tool
+  #   base_url: $STEEL_BASE_URL
+  #   # api_key: $STEEL_API_KEY  # Optional for protected Steel deployments
+  #   timeout: 30
+  #   max_capture_bytes: 15728640
+  #   delay_ms: 1000
+
   # Image search tool (uses DuckDuckGo)
   # Use this to find reference images before image generation
   - name: image_search
