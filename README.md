@@ -578,7 +578,7 @@ Skills are loaded progressively — only when the task needs them, not all at on
 
 When you install `.skill` archives through the Gateway, DeerFlow accepts standard optional frontmatter metadata such as `version`, `author`, and `compatibility` instead of rejecting otherwise valid external skills.
 
-Tools follow the same philosophy. DeerFlow comes with a core toolset — web search, web fetch, file operations, bash execution — and supports custom tools via MCP servers and Python functions. Optional community tools can add provider-specific web capabilities, including Steel Browser capture for real-browser screenshots, PDFs, and session viewer links from a Railway or self-hosted Steel instance. Swap anything. Add anything.
+Tools follow the same philosophy. DeerFlow comes with a core toolset — web search, web fetch, file operations, bash execution — and supports custom tools via MCP servers and Python functions. Optional community tools can add provider-specific web capabilities, including self-hosted SearXNG metasearch and Steel Browser capture for real-browser screenshots, PDFs, and session viewer links from a Railway or self-hosted Steel instance. Swap anything. Add anything.
 
 Gateway-generated follow-up suggestions now normalize both plain-string model output and block/list-style rich content before parsing the JSON array response, so provider-specific content wrappers do not silently drop suggestions.
 

@@ -93,6 +93,12 @@ WORKDIR /app
 
 # Copy backend with pre-built virtualenv from builder
 COPY --from=builder /app/backend ./backend
+# Include default runtime config and skills for single-platform deployments that
+# do not mount the repository checkout into the container. Docker Compose
+# deployments can still override these files with bind mounts.
+COPY config.example.yaml ./backend/config.yaml
+COPY extensions_config.example.json ./backend/extensions_config.json
+COPY skills ./skills
 
 # Expose ports (gateway: 8001, langgraph: 2024)
 EXPOSE 8001 2024

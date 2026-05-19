@@ -274,6 +274,7 @@ Proxied through nginx: `/api/langgraph/*` → Gateway LangGraph-compatible runti
 - `tavily/` - Web search (5 results default) and web fetch (4KB limit)
 - `jina_ai/` - Web fetch via Jina reader API with readability extraction
 - `firecrawl/` - Web scraping via Firecrawl API
+- `searxng/` - Optional self-hosted metasearch provider for the `web_search` tool; reads `base_url` from config or `SEARXNG_BASE_URL` and normalizes JSON results into DeerFlow's `{title,url,content}` shape
 - `steel_browser/` - Optional Steel Browser capture tool for Railway/self-hosted real-browser screenshots, PDFs, and session viewer links; writes artifacts under `/mnt/user-data/outputs` and validates capture URLs before calling Steel
 
 **ACP agent tools**:
