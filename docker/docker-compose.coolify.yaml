@@ -22,7 +22,7 @@ services:
 
   frontend:
     build:
-      context: ../
+      context: .
       dockerfile: frontend/Dockerfile
       target: prod
       args:
@@ -38,7 +38,7 @@ services:
 
   gateway:
     build:
-      context: ../
+      context: .
       dockerfile: backend/Dockerfile
       args:
         APT_MIRROR: ${APT_MIRROR:-}
