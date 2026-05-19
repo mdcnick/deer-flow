@@ -12,7 +12,7 @@ services:
       - frontend
       - gateway
     ports:
-      - "${PORT:-2026}:2026"
+      - "${PORT:-2026}:80"
     networks:
       - deer-flow
     restart: unless-stopped

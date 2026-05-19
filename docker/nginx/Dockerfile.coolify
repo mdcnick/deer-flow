@@ -1,3 +1,14 @@
 FROM nginx:alpine
 
 COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
+
+# Coolify's outer proxy routes to the container's HTTP port. The repository's
+# local compose keeps DeerFlow on port 2026, but the Coolify image should expose
+# a conventional internal port 80 so the generated proxy labels and health
+# checks do not depend on a service-port suffix in the domain field.
+RUN sed -i \
+    -e 's/listen 2026 default_server;/listen 80 default_server;/' \
+    -e 's/listen \[::\]:2026 default_server;/listen [::]:80 default_server;/' \
+    /etc/nginx/nginx.conf
+
+EXPOSE 80
