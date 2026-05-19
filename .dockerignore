@@ -59,7 +59,8 @@ tests/
 scripts/
 logs/
 docker/
-skills/
+# Skills are injected into production images for single-platform hosts such as Coolify.
+# Runtime can still override them with bind mounts in Docker Compose.
 frontend/.next
 frontend/node_modules
 backend/.venv
