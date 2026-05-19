@@ -11,6 +11,8 @@ services:
     depends_on:
       - frontend
       - gateway
+    expose:
+      - "80"
     networks:
       - deer-flow
     restart: unless-stopped
