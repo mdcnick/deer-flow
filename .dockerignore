@@ -59,6 +59,12 @@ tests/
 scripts/
 logs/
 docker/
+# Keep Coolify nginx image inputs in the root build context.
+!docker/
+docker/*
+!docker/nginx/
+!docker/nginx/Dockerfile.coolify
+!docker/nginx/nginx.conf
 # Skills are injected into production images for single-platform hosts such as Coolify.
 # Runtime can still override them with bind mounts in Docker Compose.
 frontend/.next
